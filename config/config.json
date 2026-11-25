@@ -1,0 +1,11 @@
+{
+  "autorol_role": "⛏️ JUGADOR",
+  "logs_channel_id": null,
+  "levels_channel_id": null,
+  "level_roles": {},
+  "warnings_limit": 3,
+  "tickets": {
+    "mode": "botones",
+    "title": "Help & Support"
+  }
+}

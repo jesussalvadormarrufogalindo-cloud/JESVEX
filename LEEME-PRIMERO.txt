@@ -1,0 +1,48 @@
+JESVEX - SOLO BOT, SIN PAGINA
+===========================
+Este zip YA NO TRAE PAGINA. Se elimino todo lo de dashboard/app.py, localhost:5000, etc.
+Todo se configura desde Discord con comandos, no necesitas pagina.
+
+QUE TRAE:
+- bot/ con todo: moderacion, niveles, tickets, autorol, logs, automod, config, etc
+- config/ y database/
+
+COMO PONERLO:
+1. Apaga el bot y la pagina con CTRL+C
+2. Borra TODA la carpeta D:\JESVEX\dashboard (ya no se usa)
+   Si quieres, borra tambien D:\JESVEX entero y pega este zip completo, pero GUARDA tu .env primero en el escritorio
+3. Copia esta carpeta JESVEX a D:\, reemplazar todo
+4. Vuelve a poner tu .env en D:\JESVEX\.env (el bueno, no el .ejemplo)
+   DISCORD_TOKEN=tu_token
+   DISCORD_CLIENT_ID=tu_id
+   DISCORD_CLIENT_SECRET=tu_secret
+   FLASK_SECRET=jesvex123
+5. Borra __pycache__ en D:\JESVEX\bot
+6. Borra .env.ejemplo si quieres, no sirve
+
+COMO PRENDERLO (solo 1 ventana, ya no 2):
+  cd /d D:\JESVEX
+  python bot/main.py
+  Tiene que salir OK en todo, Conectado como JESVEX#7237, Comandos sincronizados: 22 o mas
+  Ya NO tienes que prender dashboard/app.py, ya NO abres localhost:5000
+
+COMANDOS PARA CONFIGURAR TODO SIN PAGINA (solo admins):
+- /config-autorol rol: [elige JUGADOR] -> rol que se da al entrar
+- /config-logs canal: [elige #logs] -> donde llegan expulsiones, bans
+- /config-niveles-canal canal: [elige #niveles] -> donde avisa cuando subes de nivel
+- /nivel-agregar nivel: 5 rol: [elige rol] -> agrega rol por nivel, uno por uno, cualquier numero
+- /nivel-quitar nivel: 5
+- /nivel-lista -> ver todos los roles por nivel
+- /config-tickets tipo: botones o menu
+- /config-ver -> ver toda tu configuracion
+- /ticket-panel -> pone el panel de tickets en ese canal, con botones o menu segun lo que guardaste
+- /perfil -> tu perfil con portada
+- /top -> top de niveles
+- /expulsar /ban /mute /warn /limpiar -> moderacion
+- /ticket -> abre ticket rapido
+- /cerrar -> cierra ticket
+
+EN DISCORD PARA QUE JALE /expulsar y tickets:
+- Tu rol con permiso Expulsar / Banear
+- Rol JESVEX ARRIBA del rol de la persona en Ajustes > Roles
+- Rol JESVEX con permisos: Expulsar, Banear, Gestionar canales, Gestionar mensajes, Silenciar
