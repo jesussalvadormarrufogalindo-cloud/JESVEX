@@ -30,7 +30,7 @@ class Moderacion(commands.Cog):
     @app_commands.default_permissions(moderate_members=True)
     async def silenciar(self, interaction: discord.Interaction, usuario: discord.Member, minutos: int = 10):
         try:
-            import datetime; await usuario.timeout(datetime.timedelta(minutes=minutos)); await interaction.response.send_message(f"{usuario.mention} silenciado {minutos} min.")
+            import datetime; await usuario.timeout(datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=minutos)); await interaction.response.send_message(f"{usuario.mention} silenciado {minutos} minutos")
         except Exception as e: await interaction.response.send_message(f"Error: {e}", ephemeral=True)
     @app_commands.command(name="desilenciar", description="Quita el silencio")
     @app_commands.default_permissions(moderate_members=True)
