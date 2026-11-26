@@ -36,6 +36,6 @@ async def main():
                 print(f"{ext} cargado")
             except Exception as e:
                 print(f"No se pudo cargar {ext}: {e}")
-        await bot.start(TOKEN)
+     await bot.start(TOKEN)
 if __name__ == "__main__":
     asyncio.run(main())
