@@ -22,16 +22,14 @@ async def on_ready():
 async def ayuda(interaction: discord.Interaction):
     embed = discord.Embed(title="JESVEX - Ayuda Completa", description="Todos los comandos de JESVEX", color=discord.Color.blue())
     embed.add_field(name="Moderacion", value="/expulsar /banear /desbanear /limpiar /silenciar /desilenciar /advertir", inline=False)
-    embed.add_field(name="Niveles", value="/nivel /clasificacion /perfil", inline=False)
-    embed.add_field(name="Tickets", value="/ticket /cerrar", inline=False)
-    embed.add_field(name="Otros", value="/encuesta /sugerencia /anuncio /serverinfo /userinfo /avatar /ping /reaccion", inline=False)
+    embed.add_field(name="Otros", value="/encuesta /anuncio /reaccion", inline=False)
     await interaction.response.send_message(embed=embed)
 @bot.tree.command(name="ping", description="Revisa si JESVEX esta activo")
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message("Pong! Estoy activo")
 async def main():
     async with bot:
-        extensiones = ["eventos.autorol","eventos.logs","eventos.automod","comandos.moderacion","comandos.niveles","comandos.tickets","comandos.encuestas","comandos.sugerencias","comandos.anuncios","comandos.info","comandos.reaccion"]
+        extensiones = ["eventos.autorol","eventos.logs","eventos.automod","comandos.moderacion","comandos.encuestas","comandos.anuncios","comandos.reaccion"]
         for ext in extensiones:
             try:
                 await bot.load_extension(ext)
