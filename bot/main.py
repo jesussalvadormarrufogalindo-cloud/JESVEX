@@ -29,7 +29,7 @@ async def ping(interaction: discord.Interaction):
     await interaction.response.send_message("Pong! Estoy activo")
 async def main():
     async with bot:
-        extensiones = ["eventos.autorol","eventos.logs","eventos.automod","comandos.moderacion","comandos.encuestas","comandos.anuncios","comandos.reaccion"]
+        extensiones = ["eventos.logs","comandos.moderacion","comandos.encuestas","comandos.anuncios","comandos.reaccion"]
         for ext in extensiones:
             try:
                 await bot.load_extension(ext)
